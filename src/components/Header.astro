@@ -27,9 +27,7 @@ import Logo from '../assets/logo.svg'
 <div id="pdfModal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="togglePdfModal()">&times;</span>
-        <object id="pdfViewer" width="100%" height="100%" type="application/pdf" data="">
-            <p>It appears your browser doesn't support embedded PDFs. You can <a href="/src/assets/resume.pdf" target="_blank">download the PDF</a> instead.</p>
-        </object>
+        <iframe id="pdfViewer" width="100%" height="100%" frameborder="0"></iframe>
     </div>
 </div>
 
@@ -98,13 +96,15 @@ import Logo from '../assets/logo.svg'
         if (event) event.preventDefault();
         const modal = document.getElementById('pdfModal');
         const pdfViewer = document.getElementById('pdfViewer');
+        const pdfUrl = 'https://github.com/mitch-holm/resume/releases/latest/download/resume.pdf';
         
         if (modal.style.display === 'block') {
             modal.style.display = 'none';
-            pdfViewer.data = '';
+            pdfViewer.src = '';
         } else {
             modal.style.display = 'block';
-            pdfViewer.data = '/src/assets/resume.pdf';
+            // Use Google Docs viewer for better compatibility
+            pdfViewer.src = `https://docs.google.com/viewer?url=${encodeURIComponent(pdfUrl)}&embedded=true`;
         }
     }
 </script>
