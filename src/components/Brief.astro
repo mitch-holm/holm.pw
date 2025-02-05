@@ -1,0 +1,174 @@
+---
+import VectorTwo from '../assets/security.jpg'
+import VectorThree from '../assets/teamwork.jpg'
+import VectorOne from '../assets/aistockphoto.webp'
+
+import Check from '../assets/check.svg'
+import Bolt from '../assets/bolt.svg'
+import Money from '../assets/money.svg'
+import Wallet from '../assets/wallet.svg'
+import Secure from '../assets/lock.svg'
+
+---
+
+
+<section class="product-brief" id="features">
+    <div class="container">
+
+
+        <!-- Feature Two -->
+        <div class="row product-brief-items">
+            <div class="brief-media center one-half column">
+                <img src={VectorTwo} class="md-width">
+            </div>
+
+            <div class="brief-tab one-half column">
+                <h3 class="h2-title">Security & Performance at Scale</h3>
+                <p class="m-paragraph m-margin">I architected and implemented enterprise-grade security solutions that protect billions of API requests daily while maintaining exceptional performance.</p>
+
+                <div class="brief-items">
+                 <div class="row m-margin">
+                    <div class="one-half column feature-grid">
+                        <img src={Bolt} alt="Fast connect">
+                        <p class="s-paragraph">Automated security framework identifying 2,000+ vulnerabilities</p>
+                    </div>
+                    <div class="one-half column feature-grid">
+                        <img src={Money} alt="Money transfer">
+                        <p class="s-paragraph">Precision rate limiting across distributed systems</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="one-half column feature-grid">
+                        <img src={Wallet} alt="Digital wallet">
+                        <p class="s-paragraph">US Patent holder for API schema generation</p>
+                    </div>
+                    <div class="one-half column feature-grid">
+                        <img src={Secure} alt="Secure connection">
+                        <p class="s-paragraph">Really quick at finding stock photos</p>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+   
+        <!-- Feature One -->
+        <div class="row product-brief-items">
+            <div class="brief-tab one-half column">
+                <h3 class="h2-title">Full Stack JavaScript Excellence</h3>
+                <p class="m-paragraph m-margin">I have extensive experience building and scaling Node.js services, React applications, and TypeScript systems that handle enterprise workloads.</p>
+
+
+               <div class="brief-items">
+                 <div class="row m-margin">
+                    <div class="one-half column feature-grid">
+                        <img src={Bolt} alt="Fast connect">
+                        <p class="s-paragraph">Node.js microservices at enterprise scale</p>
+                    </div>
+                    <div class="one-half column feature-grid">
+                        <img src={Money} alt="Money transfer">
+                        <p class="s-paragraph">TypeScript-first development practices</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="one-half column feature-grid">
+                        <img src={Wallet} alt="Digital wallet">
+                        <p class="s-paragraph">GraphQL and REST API architecture</p>
+                    </div>
+                    <div class="one-half column feature-grid">
+                        <img src={Secure} alt="Secure connection">
+                        <p class="s-paragraph">Modern frontend frameworks and tooling</p>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="brief-media center one-half column">
+                <img src={VectorOne} class="md-width">
+            </div>
+        </div>
+
+
+
+     <!-- Feature Three -->
+      <div class="row product-brief-items">
+        <div class="brief-media center one-half column">
+            <img src={VectorThree} class="md-width">
+        </div>
+        
+         <div class="brief-tab one-half column">
+            <h3 class="h2-title">Engineering Leadership</h3>
+            <p class="m-paragraph m-margin">I have a proven track record of leading technical initiatives and improving developer productivity across large engineering organizations.</p>
+
+            <div class="brief-items">
+                <div class="row m-margin">
+                <div class="one-half column feature-grid">
+                    <img src={Bolt} alt="Fast connect">
+                    <p class="s-paragraph">40% improvement in engineering workflows</p>
+                </div>
+                <div class="one-half column feature-grid">
+                    <img src={Money} alt="Money transfer">
+                    <p class="s-paragraph">Automated review and compliance processes</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="one-half column feature-grid">
+                    <img src={Wallet} alt="Digital wallet">
+                    <p class="s-paragraph">Optimized service ownership and deployment</p>
+                </div>
+                <div class="one-half column feature-grid">
+                    <img src={Secure} alt="Secure connection">
+                    <p class="s-paragraph">Modernized critical logging infrastructure</p>
+                </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+ </section>
+
+
+ <style lang="scss">
+
+.product-brief{
+  background-color: var(--tenary);
+  .hero-brand{
+    padding-bottom: 50px;
+    .brands{
+      margin-top: 15px;
+    }
+  }
+  .product-brief-items{
+    margin-bottom: 100px;
+    .brief-tab{
+      padding-top: 50px;
+    }
+  }
+
+  .feature-grid{
+    display: flex;
+    p{
+      margin: 0 0 0 10px;
+    }
+    img{
+      width: 25px;
+      margin-top: -10px;
+    }
+  }
+
+  .brief-media{
+    height: 340px;
+    position: relative;
+    overflow: hidden;
+    background-color: #f2f5f9;
+    padding-top: 40px;
+  }
+
+  @media (max-width:700px) {
+    .brief-tab{
+        margin-left: 20px;
+    }
+  }
+}
+ </style>

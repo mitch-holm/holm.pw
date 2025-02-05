@@ -1,0 +1,110 @@
+---
+import Logo from '../assets/logo.svg'
+---
+
+<header class="nav">
+    <div class="container row">
+     <div class="nav-logo one-third column">
+         <a href="#" class="logo-link">
+             <img src={Logo} alt="Brand logo">
+         </a>
+     </div>
+     <nav class="one-third column">
+         <ul class="center flex">
+             <li><a href="#features">Features</a></li>
+             <li><a href="#pricing">Pricing</a></li>
+             <li><a href="#customers">Customers</a></li>
+         </ul>
+     </nav>
+     <div class="nav-cta one-third column">
+         <a href="#" onclick="togglePdfModal(event)">Resume</a>
+         <a href="mailto:mitch@holm.design" class="button button-primary">Contact Me</a>
+     </div>
+    </div>
+ </header>
+
+<!-- Add PDF Modal -->
+<div id="pdfModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="togglePdfModal()">&times;</span>
+        <object id="pdfViewer" width="100%" height="100%" type="application/pdf" data="">
+            <p>It appears your browser doesn't support embedded PDFs. You can <a href="/src/assets/resume.pdf" target="_blank">download the PDF</a> instead.</p>
+        </object>
+    </div>
+</div>
+
+ <style lang="scss">
+
+.nav{
+    padding: 15px 0;
+    li{
+      list-style: none;
+      margin-top: 7px;
+    }
+    .nav-cta{
+      text-align: right;
+    }
+    a:not(.button):not(.logo-link){
+      color: #111;
+      padding: 0 20px;
+      text-decoration: none;
+    }
+    .logo-link img{
+      width: 90px;
+      margin-top: 5px;
+    }
+    @media (max-width:700px) {
+      nav{
+        display: none;
+      }
+      .nav-cta{
+        position: absolute;
+        right: 20px;
+      }
+    }
+  } 
+.modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.7);
+    }
+
+    .modal-content {
+        position: relative;
+        margin: 5% auto;
+        width: 90%;
+        height: 85%;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    .close {
+        position: absolute;
+        right: 10px;
+        top: 5px;
+        font-size: 28px;
+        cursor: pointer;
+    }
+</style>
+
+<script is:inline>
+    function togglePdfModal(event) {
+        if (event) event.preventDefault();
+        const modal = document.getElementById('pdfModal');
+        const pdfViewer = document.getElementById('pdfViewer');
+        
+        if (modal.style.display === 'block') {
+            modal.style.display = 'none';
+            pdfViewer.data = '';
+        } else {
+            modal.style.display = 'block';
+            pdfViewer.data = '/src/assets/resume.pdf';
+        }
+    }
+</script>
